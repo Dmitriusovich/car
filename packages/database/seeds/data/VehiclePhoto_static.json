@@ -1,0 +1,122 @@
+[
+  {
+    "url": "assets/images/cars-big/audi-box.png",
+    "position": 1,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 1
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/audia1.jpg",
+    "position": 2,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 1
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/golf6-box.png",
+    "position": 1,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 2
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/golf6.jpg",
+    "position": 2,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 2
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/toyota-box.png",
+    "position": 1,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 3
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/toyotacamry.jpg",
+    "position": 2,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 3
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/bmw-box.png",
+    "position": 1,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 4
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/bmw320.jpg",
+    "position": 2,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 4
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/benz-box.png",
+    "position": 1,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 5
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/benz.jpg",
+    "position": 2,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 5
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/passat-box.png",
+    "position": 1,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 6
+      }
+    }
+  },
+  {
+    "url": "assets/images/cars-big/passatcc.png",
+    "position": 1,
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 6
+      }
+    }
+  }
+]

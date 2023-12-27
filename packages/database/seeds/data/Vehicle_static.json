@@ -1,0 +1,148 @@
+[
+  {
+    "id": 1,
+    "uuid": "81b0272a-29ac-4dfe-9a76-0874c17c1073",
+    "brand": "Audi",
+    "model": "A1",
+    "year": 2012,
+    "description": "Sporty and compact, the Audi A1 S-Line is a stylish choice. With a powerful Diesel engine, it offers a balance of performance and fuel efficiency. Ideal for urban adventures.",
+    "mileage": 351113,
+    "licensePlate": "IN A1043",
+    "pricePerDay": 45,
+    "name": "Audi A1 S-Line",
+    "fuelTypeId": {
+      "type": "FuelType",
+      "where": {
+        "name": "Diesel"
+      }
+    },
+    "rentalId": {
+      "type": "Rental",
+      "where": {
+        "id": 1
+      }
+    }
+  },
+
+  {
+    "id": 2,
+    "uuid": "81b0272a-29ac-4dfe-9a76-1874c17c1073",
+    "brand": "Volkswagen",
+    "model": "Golf",
+    "year": 2008,
+    "description": "The Volkswagen Golf is a reliable and efficient hatchback. Its Diesel engine ensures a smooth ride with excellent fuel economy. Perfect for practical and comfortable driving.",
+    "mileage": 455511,
+    "licensePlate": "WOB GO 608",
+    "pricePerDay": 37,
+    "name": "Volkswagen Golf",
+    "fuelTypeId": {
+      "type": "FuelType",
+      "where": {
+        "name": "Diesel"
+      }
+    },
+    "rentalId": {
+      "type": "Rental",
+      "where": {
+        "id": 1
+      }
+    }
+  },
+
+  {
+    "id": 3,
+    "uuid": "81b0272a-29ac-4dfe-9a76-3874c17c1073",
+    "brand": "Toyota",
+    "model": "Camry",
+    "year": 2006,
+    "description": "The Toyota Camry is known for its reliability and comfort. Powered by a Petrol engine, it delivers a smooth driving experience. An excellent choice for those seeking a dependable sedan.",
+    "mileage": 88211,
+    "licensePlate": "WOB BL 91Q",
+    "pricePerDay": 30,
+    "name": "Toyota Camry",
+    "fuelTypeId": {
+      "type": "FuelType",
+      "where": {
+        "name": "Petrol"
+      }
+    },
+    "rentalId": {
+      "type": "Rental",
+      "where": {
+        "id": 1
+      }
+    }
+  },
+  {
+    "id": 4,
+    "uuid": "81b0272a-29ac-4dfe-9a76-4874c17c1073",
+    "brand": "BMW",
+    "model": "320",
+    "year": 2012,
+    "description": "The BMW 320 Modern-Line combines luxury with performance. Its Diesel engine offers a dynamic driving experience, and the modern design ensures you travel in style and comfort.",
+    "mileage": 45999,
+    "licensePlate": "WOB BA 718",
+    "pricePerDay": 35,
+    "name": "BMW 320 Modern-Line",
+    "fuelTypeId": {
+      "type": "FuelType",
+      "where": {
+        "name": "Diesel"
+      }
+    },
+    "rentalId": {
+      "type": "Rental",
+      "where": {
+        "id": 1
+      }
+    }
+  },
+  {
+    "id": 5,
+    "uuid": "81b0272a-29ac-4dfe-9a76-5874c17c1073",
+    "brand": "Mercedes-Benz",
+    "model": "GLK",
+    "year": 2006,
+    "description": "The Mercedes-Benz GLK is a premium SUV with a powerful Diesel engine. Offering a luxurious interior and advanced features, it's perfect for those who prioritize both performance and elegance.",
+    "mileage": 76800,
+    "licensePlate": "WOB CA 512",
+    "pricePerDay": 50,
+    "name": "Mercedes-Benz GLK",
+    "fuelTypeId": {
+      "type": "FuelType",
+      "where": {
+        "name": "Diesel"
+      }
+    },
+    "rentalId": {
+      "type": "Rental",
+      "where": {
+        "id": 1
+      }
+    }
+  },
+  {
+    "id": 6,
+    "uuid": "81b0272a-29ac-4dfe-9a76-6874c17c1073",
+    "brand": "Volkswagen",
+    "model": "Passat CC",
+    "year": 2008,
+    "description": "The Volkswagen Passat CC is a sleek and stylish sedan with a Petrol engine. Offering a blend of comfort and performance, it's an ideal choice for those who enjoy a touch of sophistication.",
+    "mileage": 214000,
+    "licensePlate": "WOB CC 212",
+    "pricePerDay": 25,
+    "name": "Volkswagen Passat CC",
+    "fuelTypeId": {
+      "type": "FuelType",
+      "where": {
+        "name": "Petrol"
+      }
+    },
+    "rentalId": {
+      "type": "Rental",
+      "where": {
+        "id": 1
+      }
+    }
+  }
+]

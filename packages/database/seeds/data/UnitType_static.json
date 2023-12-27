@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "uuid": "adbcc3b9-c561-4838-8917-ee2df332572c",
+    "name": "Metric"
+  },
+  {
+    "id": 2,
+    "uuid": "0abba9d6-df5e-46b3-8641-cd48815019a5",
+    "name": "Imperial"
+  }
+]

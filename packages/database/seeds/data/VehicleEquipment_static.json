@@ -1,0 +1,182 @@
+[
+  {
+    "key": "doors",
+    "value": "2/3",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 1
+      }
+    }
+  },
+  {
+    "key": "transmission",
+    "value": "manual",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 1
+      }
+    }
+  },
+  {
+    "key": "ac",
+    "value": "yes",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 1
+      }
+    }
+  },
+  {
+    "key": "doors",
+    "value": "4/5",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 2
+      }
+    }
+  },
+  {
+    "key": "transmission",
+    "value": "manual",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 2
+      }
+    }
+  },
+  {
+    "key": "ac",
+    "value": "yes",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 2
+      }
+    }
+  },
+  {
+    "key": "doors",
+    "value": "4/5",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 3
+      }
+    }
+  },
+  {
+    "key": "transmission",
+    "value": "manual",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 3
+      }
+    }
+  },
+  {
+    "key": "ac",
+    "value": "yes",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 3
+      }
+    }
+  },
+  {
+    "key": "doors",
+    "value": "4/5",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 4
+      }
+    }
+  },
+  {
+    "key": "transmission",
+    "value": "automatic",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 4
+      }
+    }
+  },
+  {
+    "key": "ac",
+    "value": "yes",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 4
+      }
+    }
+  },
+  {
+    "key": "doors",
+    "value": "4/5",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 5
+      }
+    }
+  },
+  {
+    "key": "transmission",
+    "value": "automatic",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 5
+      }
+    }
+  },
+  {
+    "key": "ac",
+    "value": "yes",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 5
+      }
+    }
+  },
+  {
+    "key": "doors",
+    "value": "4/5",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 6
+      }
+    }
+  },
+  {
+    "key": "transmission",
+    "value": "automatic",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 6
+      }
+    }
+  },
+  {
+    "key": "ac",
+    "value": "yes",
+    "vehicleId": {
+      "type": "Vehicle",
+      "where": {
+        "id": 6
+      }
+    }
+  }
+]

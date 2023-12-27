@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "uuid": "81b0272a-29ac-4dfe-9a76-9874c17c1073",
+    "name": "Gas"
+  },
+  {
+    "id": 2,
+    "uuid": "13d9543b-c4ce-4180-8165-ff8228713c4a",
+    "name": "Diesel"
+  },
+  {
+    "id": 3,
+    "uuid": "e3c2fde8-3690-4d1c-8b6b-a03602693f45",
+    "name": "Electric"
+  },
+  {
+    "id": 4,
+    "uuid": "b9496613-19dd-4b29-8913-ee022c42afe6",
+    "name": "Hybrid"
+  },
+  {
+    "id": 5,
+    "uuid": "b9496619-19dd-4b29-8913-ee022c42afe6",
+    "name": "Petrol"
+  }
+]
