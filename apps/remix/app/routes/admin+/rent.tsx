@@ -9,7 +9,7 @@ import { getTableParams } from "~/lib/table"
 
 const TAKE = 10
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const { orderBy, search, skip, take } = getTableParams(request, TAKE, { orderBy: "id", order: "desc" })
+  const { orderBy, search, skip, take } = getTableParams(request, TAKE, { orderBy: "id", order: "asc" })
   const where = {
     OR: search ? [{ name: { contains: search } }] : undefined,
   } satisfies Prisma.RentalWhereInput
