@@ -23,6 +23,7 @@ interface Props<T extends DataType> {
   data?: T[]
   getRowHref?: (item: T) => string
   noDataText?: string
+  drawer?: (node: React.ReactElement<ColumnProps<T>> | undefined, item: T) => React.ReactNode
 }
 
 export function Table<T extends DataType>(props: Props<T>) {
@@ -38,6 +39,7 @@ export function Table<T extends DataType>(props: Props<T>) {
   const columns = React.Children.map(props.children, (child) => child?.props)?.filter(Boolean) || []
 
   const data = props.data || []
+  const drawer = props.drawer || ((node: React.ReactElement, item: T) => node)
 
   return (
     <div className="flex w-full flex-grow flex-col overflow-hidden">
@@ -82,19 +84,23 @@ export function Table<T extends DataType>(props: Props<T>) {
       {data.length > 0 ? (
         <div className="flex flex-grow flex-col justify-between">
           {data.map((item) => (
-            <div
-              key={item.id}
-              className={join(
-                "flex w-full items-center border-t border-black/10 px-4 dark:border-white/10",
-                !!props.getRowHref && "cursor-pointer hover:bg-gray-900",
+            <React.Fragment key={item.id}>
+              {drawer(
+                <div
+                  className={join(
+                    "flex w-full items-center border-t border-black/10 px-4 dark:border-white/10",
+                    !!props.getRowHref && "cursor-pointer hover:bg-gray-900",
+                  )}
+                >
+                  {columns.map(({ row, sortKey, header, ...column }, i) => (
+                    <ColumnField key={i.toString()} href={props.getRowHref?.(item)} isLast={i === columns.length - 1} {...column}>
+                      {row?.(item)}
+                    </ColumnField>
+                  ))}
+                </div>,
+                item,
               )}
-            >
-              {columns.map(({ row, sortKey, header, ...column }, i) => (
-                <ColumnField key={i.toString()} href={props.getRowHref?.(item)} isLast={i === columns.length - 1} {...column}>
-                  {row?.(item)}
-                </ColumnField>
-              ))}
-            </div>
+            </React.Fragment>
           ))}
 
           <div className="flex items-center justify-between border-t border-black/10 bg-gray-50 px-4 py-3 dark:border-white/10 dark:bg-gray-900">

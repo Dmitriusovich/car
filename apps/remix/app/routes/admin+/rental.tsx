@@ -36,7 +36,16 @@ export default function Rentals() {
       <h1 className="text-4xl text-center mb-8">Прокат</h1>
       <Search />
       <Tile>
-        <Table<Rental> data={rentals} take={TAKE} count={count}>
+        <Table<Rental>
+          data={rentals}
+          take={TAKE}
+          count={count}
+          drawer={(node, item) => (
+            <Drawer trigger={node} title="Прокат">
+              {item.name}
+            </Drawer>
+          )}
+        >
           <Column<Rental> sortKey="id" header="№" row={(customer) => customer.id} />
           <Column<Rental> sortKey="name" header="Наименование" row={(customer) => customer.name} />
           <Column<Rental> sortKey="name" header="Единицы измерения" row={(customer) => customer.unitType.name} />

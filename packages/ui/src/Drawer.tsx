@@ -23,9 +23,13 @@ const portalVariants = cva("fixed inset-0 z-50 flex", {
   defaultVariants: { position: "right" },
 })
 
-interface DrawerPortalProps extends DrawerPrimitive.DialogPortalProps, VariantProps<typeof portalVariants> {}
+interface DrawerPortalProps extends DrawerPrimitive.DialogPortalProps, VariantProps<typeof portalVariants> {
+  className?: string
+}
 
 const DrawerPortal = ({ position, className, children, ...props }: DrawerPortalProps) => (
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   <DrawerPrimitive.Portal className={join(className)} {...props}>
     <div className={portalVariants({ position })}>{children}</div>
   </DrawerPrimitive.Portal>
