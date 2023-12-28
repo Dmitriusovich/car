@@ -1,10 +1,14 @@
 import { Limiter } from "@boilerplate/ui"
 import { useLoaderData } from "@remix-run/react"
-import { LoaderFunctionArgs, redirect } from "@vercel/remix"
+import { LoaderFunctionArgs, MetaFunction, redirect } from "@vercel/remix"
 import { Banner1, Choose, Download, Faq, Hero, Pick, Plan, Testimonials } from "~/components"
 import { Booking } from "~/components/Booking"
 import { trpcSsrClient } from "~/lib/providers/TRPCProvider"
 import { FlashType, getFlashSession } from "~/services/session/flash.server"
+
+export const meta: MetaFunction = () => {
+  return [{ title: "RentalCar" }, { name: "description", content: "RentalCar" }]
+}
 
 export const headers = () => {
   return {
