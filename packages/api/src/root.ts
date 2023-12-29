@@ -1,5 +1,6 @@
 import { authRouter } from "./router/auth"
 import { bookCarRouter } from "./router/bookCar"
+import { customerRouter } from "./router/customer"
 import { fuelTypeRouter } from "./router/fuelType"
 import { locationRouter } from "./router/location"
 import { rentalRouter } from "./router/rental"
@@ -19,6 +20,7 @@ export const appRouter = createTRPCRouter({
   vehiclePhoto: vehiclePhotoRouter,
   bookCar: bookCarRouter,
   location: locationRouter,
+  customer: customerRouter,
 })
 
 // export type definition of API
