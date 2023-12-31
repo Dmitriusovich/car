@@ -10,6 +10,7 @@ import { Search } from "~/components/Search"
 import { Column, Table } from "~/components/Table"
 import { db } from "~/lib/db.server"
 import { formError, validateFormData } from "~/lib/form"
+import { getFormattedDate } from "~/lib/helpers/utils"
 import { trpcSsrClient } from "~/lib/providers/TRPCProvider"
 import { badRequest } from "~/lib/remix"
 import { getTableParams } from "~/lib/table"
@@ -138,7 +139,7 @@ export default function Location() {
         >
           <Column<Location> sortKey="id" header="№" row={(customer) => customer.id} />
           <Column<Location> sortKey="city" header="Город" row={(customer) => customer.city} />
-          <Column<Location> sortKey="createdAt" header="Добавлено" row={(customer) => customer.createdAt} />
+          <Column<Location> sortKey="createdAt" header="Добавлено" row={(customer) => getFormattedDate(customer.createdAt)} />
         </Table>
       </Tile>
       <Drawer trigger={<BrandButton className="ml-auto mt-4">Добавить новый город</BrandButton>} title="Добавить новый город">

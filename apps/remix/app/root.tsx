@@ -17,6 +17,11 @@ import type { LinksFunction, LoaderFunctionArgs, MetaFunction, SerializeFrom } f
 import { json } from "@vercel/remix"
 import NProgress from "nprogress"
 import * as React from "react"
+import dayjs from "dayjs"
+import localizedFormat from "dayjs/plugin/localizedFormat"
+import "dayjs/locale/ru"
+
+dayjs.extend(localizedFormat)
 
 import { join } from "@boilerplate/shared"
 import { Toaster } from "@boilerplate/ui"

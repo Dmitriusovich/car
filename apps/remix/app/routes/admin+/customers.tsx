@@ -10,6 +10,7 @@ import { Search } from "~/components/Search"
 import { Column, Table } from "~/components/Table"
 import { db } from "~/lib/db.server"
 import { formError, validateFormData } from "~/lib/form"
+import { getFormattedDate } from "~/lib/helpers/utils"
 import { trpcSsrClient } from "~/lib/providers/TRPCProvider"
 import { badRequest } from "~/lib/remix"
 import { getTableParams } from "~/lib/table"
@@ -177,7 +178,11 @@ export default function Customers() {
           <Column<Customer> sortKey="email" header="Почта" row={(customer) => customer.email} />
           <Column<Customer> sortKey="phoneNumber" header="Телефон" row={(customer) => customer.phoneNumber} />
           <Column<Customer> sortKey="city" header="Город" row={(customer) => customer.city} />
-          <Column<Customer> sortKey="createdAt" header="Дата регистрации" row={(customer) => customer.createdAt} />
+          <Column<Customer>
+            sortKey="createdAt"
+            header="Дата регистрации"
+            row={(customer) => getFormattedDate(customer.createdAt)}
+          />
         </Table>
       </Tile>
     </div>

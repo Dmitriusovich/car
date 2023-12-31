@@ -1,4 +1,4 @@
-import { type Prisma } from "@boilerplate/database"
+import { UnitTypeEnum, type Prisma } from "@boilerplate/database"
 import { Badge, BrandButton, Drawer, Select, Switch, Tile } from "@boilerplate/ui"
 import { useLoaderData } from "@remix-run/react"
 import { TRPCClientError } from "@trpc/client"
@@ -10,6 +10,7 @@ import { Search } from "~/components/Search"
 import { Column, Table } from "~/components/Table"
 import { db } from "~/lib/db.server"
 import { formError, validateFormData } from "~/lib/form"
+import { getFormattedDate } from "~/lib/helpers/utils"
 import { trpcSsrClient } from "~/lib/providers/TRPCProvider"
 import { badRequest } from "~/lib/remix"
 import { getTableParams } from "~/lib/table"
@@ -137,7 +138,7 @@ export default function Rentals() {
                             key={unitType.id}
                             value={unitType.uuid}
                           >
-                            {unitType.name}
+                            {unitType.name === UnitTypeEnum.Imperial ? "Имперская система" : "Метрическая система"}
                           </option>
                         ))}
                       </Select>
@@ -164,8 +165,12 @@ export default function Rentals() {
         >
           <Column<Rental> sortKey="id" header="№" row={(customer) => customer.id} />
           <Column<Rental> sortKey="name" header="Наименование" row={(customer) => customer.name} />
-          <Column<Rental> sortKey="name" header="Единицы измерения" row={(customer) => customer.unitType.name} />
-          <Column<Rental> sortKey="createdAt" header="Добавлено" row={(customer) => customer.createdAt} />
+          <Column<Rental>
+            sortKey="name"
+            header="Единицы измерения"
+            row={(customer) => (customer.unitType.name === UnitTypeEnum.Imperial ? "Имперская система" : "Метрическая система")}
+          />
+          <Column<Rental> sortKey="createdAt" header="Добавлено" row={(customer) => getFormattedDate(customer.createdAt)} />
         </Table>
       </Tile>
       <Drawer

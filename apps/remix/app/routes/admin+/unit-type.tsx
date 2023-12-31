@@ -1,10 +1,10 @@
-import { UnitTypeEnum, type Prisma } from "@boilerplate/database"
+import { UnitTypeEnum } from "@boilerplate/database"
 import { Tile } from "@boilerplate/ui"
 import { useLoaderData } from "@remix-run/react"
 import { json, type LoaderFunctionArgs, type SerializeFrom } from "@vercel/remix"
-import { Search } from "~/components/Search"
 import { Column, Table } from "~/components/Table"
 import { db } from "~/lib/db.server"
+import { getFormattedDate } from "~/lib/helpers/utils"
 import { getTableParams } from "~/lib/table"
 
 const TAKE = 10
@@ -31,8 +31,12 @@ export default function UnitTypes() {
       <Tile>
         <Table<UnitType> data={unitType} take={TAKE} count={count}>
           <Column<UnitType> sortKey="id" header="№" row={(customer) => customer.id} />
-          <Column<UnitType> sortKey="name" header="Наименование" row={(manager) => manager.name} />
-          <Column<UnitType> sortKey="createdAt" header="Дата добавления" row={(manager) => manager.createdAt} />
+          <Column<UnitType>
+            sortKey="name"
+            header="Наименование"
+            row={(manager) => (manager.name === UnitTypeEnum.Imperial ? "Имперская система" : "Метрическая система")}
+          />
+          <Column<UnitType> sortKey="createdAt" header="Дата добавления" row={(manager) => getFormattedDate(manager.createdAt)} />
         </Table>
       </Tile>
     </div>

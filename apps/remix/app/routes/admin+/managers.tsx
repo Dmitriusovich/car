@@ -5,6 +5,7 @@ import { json, type LoaderFunctionArgs, type SerializeFrom } from "@vercel/remix
 import { Search } from "~/components/Search"
 import { Column, Table } from "~/components/Table"
 import { db } from "~/lib/db.server"
+import { getFormattedDate } from "~/lib/helpers/utils"
 import { getTableParams } from "~/lib/table"
 
 const TAKE = 10
@@ -38,7 +39,7 @@ export default function Managers() {
           <Column<Manager> sortKey="id" header="№" row={(customer) => customer.id} />
           <Column<Manager> sortKey="name" header="Имя" row={(manager) => manager.name} />
           <Column<Manager> sortKey="email" header="Почта" row={(manager) => manager.email} />
-          <Column<Manager> sortKey="createdAt" header="Дата регистрации" row={(manager) => manager.createdAt} />
+          <Column<Manager> sortKey="createdAt" header="Дата регистрации" row={(manager) => getFormattedDate(manager.createdAt)} />
         </Table>
       </Tile>
     </div>
