@@ -112,11 +112,7 @@ export const VehiclesModel = ({ image, brand, model, price, door, transmission, 
           </div>
         </div>
 
-        <div className="mx-auto w-full border-t border-t-[#d5d5d5] pt-5">
-          <button className="w-full rounded bg-primary-600 hover:bg-primary-700 active:bg-primary-800px-7 py-4 font-medium text-white shadow-lg shadow-orangeShadow transition-all hover:opacity-80">
-            Забронирывать
-          </button>
-        </div>
+        
       </div>
     </div>
   )
