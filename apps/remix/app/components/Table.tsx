@@ -23,6 +23,7 @@ interface Props<T extends DataType> {
   data?: T[]
   getRowHref?: (item: T) => string
   noDataText?: string
+  activeRow?: boolean
   drawer?: (node: React.ReactElement<ColumnProps<T>> | undefined, item: T) => React.ReactNode
 }
 
@@ -89,7 +90,7 @@ export function Table<T extends DataType>(props: Props<T>) {
                 <div
                   className={join(
                     "flex w-full items-center border-t border-black/10 px-4 dark:border-white/10",
-                    !!props.getRowHref && "cursor-pointer hover:bg-gray-900",
+                    (!!props.getRowHref || !!props.activeRow) && "cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-900",
                   )}
                 >
                   {columns.map(({ row, sortKey, header, ...column }, i) => (

@@ -28,7 +28,6 @@ type Manager = SerializeFrom<typeof loader>["mangers"][number]
 
 export default function Managers() {
   const { mangers, count } = useLoaderData<typeof loader>()
-  console.log(mangers)
 
   return (
     <div className="stack">

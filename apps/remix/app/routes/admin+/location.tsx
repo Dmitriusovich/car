@@ -108,6 +108,7 @@ export default function Location() {
       <Search />
       <Tile>
         <Table<Location>
+          activeRow
           data={locations}
           take={TAKE}
           count={count}
@@ -116,7 +117,7 @@ export default function Location() {
               <Form method="post" replace className="mt-10">
                 <fieldset className="stack flex flex-col gap-1" disabled={!checked}>
                   <FormField required label="Наименование" name="city" type="text" defaultValue={item.city} disabled={!checked} />
-                  <input name="locationUuid" className="hidden" value={item.uuid} />
+                  <input name="locationUuid" className="hidden" defaultValue={item.uuid} />
 
                   {checked && (
                     <div>

@@ -115,6 +115,7 @@ export default function Rentals() {
       <Search />
       <Tile>
         <Table<Rental>
+          activeRow
           data={rentals}
           take={TAKE}
           count={count}
@@ -123,7 +124,7 @@ export default function Rentals() {
               <Form method="post" replace className="mt-10">
                 <fieldset className="stack flex flex-col gap-1" disabled={!checked}>
                   <FormField required label="Наименование" name="name" type="text" defaultValue={item.name} disabled={!checked} />
-                  <input name="rentalTypeUuid" className="hidden" value={item.uuid} />
+                  <input name="rentalTypeUuid" className="hidden" defaultValue={item.uuid} />
                   <FormField
                     required
                     label="Тип аренды"
@@ -166,7 +167,7 @@ export default function Rentals() {
           <Column<Rental> sortKey="id" header="№" row={(customer) => customer.id} />
           <Column<Rental> sortKey="name" header="Наименование" row={(customer) => customer.name} />
           <Column<Rental>
-            sortKey="name"
+            sortKey="unitType.name"
             header="Единицы измерения"
             row={(customer) => (customer.unitType.name === UnitTypeEnum.Imperial ? "Имперская система" : "Метрическая система")}
           />

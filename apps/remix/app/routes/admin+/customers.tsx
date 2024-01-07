@@ -109,6 +109,7 @@ export default function Customers() {
       <Search />
       <Tile>
         <Table<Customer>
+          activeRow
           data={customers}
           take={TAKE}
           count={count}
@@ -151,7 +152,7 @@ export default function Customers() {
                     defaultValue={String(item.zipCode)}
                     disabled={!checked}
                   />
-                  <input name="customerUuid" className="hidden" value={item.uuid} />
+                  <input name="customerUuid" className="hidden" defaultValue={item.uuid} />
 
                   {checked && (
                     <div>
