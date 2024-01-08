@@ -97,20 +97,21 @@ const Navbar = ({ isDark, isAuth }: INavbarProps): ReactElement => {
                   icon={isDark ? <Sun className="sq-4" /> : <Moon className="sq-4" />}
                 />
               </themeFetcher.Form>
-              {isAuth ? (
-                <Button variant="outline" onClick={() => logoutSubmit(null, { method: "post", action: "/logout" })}>
-                  Выход
-                </Button>
-              ) : (
-                <div className="hstack">
-                  <LinkButton variant="ghost" to="/login">
-                    Вход
-                  </LinkButton>
-                  <LinkButton colorScheme="primary" to="/register">
-                    Регистрация
-                  </LinkButton>
-                </div>
-              )}
+              {
+                isAuth ? (
+                  <Button variant="outline" onClick={() => logoutSubmit(null, { method: "post", action: "/logout" })}>
+                    Выход
+                  </Button>
+                ) : undefined
+                // <div className="hstack">
+                //   <LinkButton variant="ghost" to="/login">
+                //     Вход
+                //   </LinkButton>
+                //   <LinkButton colorScheme="primary" to="/register">
+                //     Регистрация
+                //   </LinkButton>
+                // </div>
+              }
             </div>
             <div
               className="my-auto mr-5 w-10 cursor-pointer text-black transition-all duration-300 ease-in-out hover:text-primary-600 lg:hidden"
