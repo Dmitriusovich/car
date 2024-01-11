@@ -5,6 +5,7 @@ const { flatRoutes } = require("remix-flat-routes")
  */
 module.exports = {
   cacheDirectory: "./node_modules/.cache/remix",
+  browserNodeBuiltinsPolyfill: { modules: { events: true } },
   ignoredRouteFiles: ["**/*"],
   serverDependenciesToBundle: [
     "@boilerplate/api",

@@ -1,5 +1,5 @@
 import { RentStatusEnum } from "@boilerplate/database"
-import { Badge, Drawer, Select, Switch, Tile } from "@boilerplate/ui"
+import { Badge, Button, Drawer, Select, Switch, Tile } from "@boilerplate/ui"
 import { useLoaderData } from "@remix-run/react"
 import { TRPCClientError } from "@trpc/client"
 import { json, MetaFunction, type LoaderFunctionArgs, type SerializeFrom, ActionFunctionArgs, redirect } from "@vercel/remix"
@@ -7,6 +7,8 @@ import { useCallback, useState } from "react"
 import { z } from "zod"
 import { Form, FormButton, FormError, FormField } from "~/components/Form"
 import { Column, Table } from "~/components/Table"
+import { DownloadPDF } from "~/components/pdf/DownloadPDF"
+import { initialInvoice } from "~/components/pdf/InvoicePage"
 import { db } from "~/lib/db.server"
 import { formError, validateFormData } from "~/lib/form"
 import { trpcSsrClient } from "~/lib/providers/TRPCProvider"
@@ -107,7 +109,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
   }
 }
 
-type Rental = SerializeFrom<typeof loader>["rents"][number]
+export type RentalType = SerializeFrom<typeof loader>["rents"][number]
 
 export default function Rental() {
   const { rents, vehicles, locations, count } = useLoaderData<typeof loader>()
@@ -115,7 +117,7 @@ export default function Rental() {
 
   const onCheckedChange = useCallback(() => setChecked((prev) => !prev), [])
 
-  const getRentStatus = useCallback((rentData: Rental) => {
+  const getRentStatus = useCallback((rentData: RentalType) => {
     switch (rentData.status) {
       case RentStatusEnum.Accepted:
         return "Подтвержден"
@@ -140,7 +142,7 @@ export default function Rental() {
     <div className="stack">
       <h1 className="text-4xl text-center mb-8">Аренда</h1>
       <Tile>
-        <Table<Rental>
+        <Table<RentalType>
           activeRow
           data={rents}
           take={TAKE}
@@ -260,26 +262,27 @@ export default function Rental() {
                   )}
                 </fieldset>
               </Form>
-              <Badge colorScheme={"primary"} className="flex items-center justify-center p-2 gap-4 my-8">
+              <Badge colorScheme={"primary"} className="flex items-center justify-center p-2 gap-4 mt-8 mb-2">
                 <label className="font-bold cursor-pointer" htmlFor="airplane-mode">
                   {checked ? "Ввод данных разрешен" : "Обновить данные"}
                 </label>
                 <Switch checked={checked} onCheckedChange={onCheckedChange} id="airplane-mode" />
               </Badge>
+							<DownloadPDF className="outline-none focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900 flex center border border-transparent transition-colors duration-200 bg-red-500 hover:bg-red-600 active:bg-red-700 text-white py-2" data={item}>Скачать документ</DownloadPDF>
             </Drawer>
           )}
         >
-          <Column<Rental> sortKey="id" header="№" row={(rent) => rent.id} />
-          <Column<Rental> sortKey="vehicle.name" header="Автомобиль" row={(rent) => rent.vehicle.name} />
-          <Column<Rental> sortKey="status" header="Статус" row={getRentStatus} />
-          <Column<Rental>
+          <Column<RentalType> sortKey="id" header="№" row={(rent) => rent.id} />
+          <Column<RentalType> sortKey="vehicle.name" header="Автомобиль" row={(rent) => rent.vehicle.name} />
+          <Column<RentalType> sortKey="status" header="Статус" row={getRentStatus} />
+          <Column<RentalType>
             sortKey="customer.firstName"
             header="Клиент"
             row={(rent) => `${rent.customer.firstName} ${rent.customer.lastName}`}
           />
-          <Column<Rental> sortKey="customer.phoneNumber" header="Телефон" row={(rent) => rent.customer.phoneNumber} />
-          <Column<Rental> sortKey="pickUp.city" header="Выдача" row={(rent) => rent.pickUp.city} />
-          <Column<Rental> sortKey="dropOff.city" header="Сдача" row={(rent) => rent.dropOff.city} />
+          <Column<RentalType> sortKey="customer.phoneNumber" header="Телефон" row={(rent) => rent.customer.phoneNumber} />
+          <Column<RentalType> sortKey="pickUp.city" header="Выдача" row={(rent) => rent.pickUp.city} />
+          <Column<RentalType> sortKey="dropOff.city" header="Сдача" row={(rent) => rent.dropOff.city} />
         </Table>
       </Tile>
     </div>
