@@ -18,7 +18,9 @@
     "prettier:fix": "turbo run prettier:fix",
     "lint:fix": "turbo run lint:fix",
     "typecheck": "turbo run typecheck",
-    "db:generate": "turbo run db:generate"
+    "db:generate": "turbo run db:generate",
+    "backup-db": "pg_dump -U postgres -h localhost -p 5432 -d car > backup.sql",
+    "restore-db": "psql -U postgres -h localhost -p 5432 -d car-2 < backup.sql"
   },
   "prisma": {
     "schema": "./packages/database/schema.prisma"
